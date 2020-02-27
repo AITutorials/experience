@@ -1,7 +1,5 @@
+![Logo](http://www.tisv.cn/img/logo.png)
 
-<div style="align: center">
-![Logo](http://www.tisv.cn/img/logo7.png)
-</div>
 --------------------------------------------------------------------------------
 
 
