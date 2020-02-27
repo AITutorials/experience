@@ -13,9 +13,7 @@
 
 ---
 
-## 经典案例
-
-### 对比多种RNN模型构建人名分类器
+## 经典案例: 对比多种RNN模型构建人名分类器
 
 
 * 学习目标:
@@ -935,7 +933,7 @@ plt.bar(range(len(x_data)), y_data, tick_label=x_data)
 > * 损失对比曲线:
 
 
-<center>![avatar](./img/compared_loss.png)</center>
+![avatar](./img/compared_loss.png)
 
 ---
 
@@ -948,7 +946,7 @@ plt.bar(range(len(x_data)), y_data, tick_label=x_data)
 
 > * 训练耗时对比图:
 
-<center>![avatar](./img/compared_period.png)</center>
+![avatar](./img/compared_period.png)
 
 ---
 
