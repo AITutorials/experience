@@ -933,7 +933,7 @@ plt.bar(range(len(x_data)), y_data, tick_label=x_data)
 > * 损失对比曲线:
 
 
-![avatar](./img/compared_loss.png)
+![avatar](http://www.tisv.cn/img/compared_loss.png)
 
 ---
 
@@ -946,7 +946,7 @@ plt.bar(range(len(x_data)), y_data, tick_label=x_data)
 
 > * 训练耗时对比图:
 
-![avatar](./img/compared_period.png)
+![avatar](http://www.tisv.cn/img/compared_period.png)
 
 ---
 
