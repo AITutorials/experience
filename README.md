@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 
 
-[![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](http://www.tisv.cn/) [![GitHub stars](http://www.tisv.cn/img/givemeastar.png)](https://github.com/AITutorials/)
+[![Build Status](http://www.tisv.cn/img/badge.svg)](http://www.tisv.cn/) [![GitHub stars](http://www.tisv.cn/img/givemeastar.png)](https://github.com/AITutorials/)
 
 
 ## 案例说明
@@ -42,3 +42,12 @@ seq2seq模型架构, 包括两部分分别是encoder(编码器)和decoder(解码
 
 ---
 
+## 其他资源
+
+* [Dataset(集成世界范围内重要AI技术解决方案)](https://github.com/AITutorials/dataset)
+
+* [Solutions(集成世界范围内重要AI技术解决方案)](https://github.com/AITutorials/solutions)
+
+* [Cooperation(寻求更多资源与合作伙伴)](https://github.com/AITutorials/cooperation)
+
+---
