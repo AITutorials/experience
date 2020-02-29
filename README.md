@@ -44,7 +44,7 @@ seq2seq模型架构, 包括两部分分别是encoder(编码器)和decoder(解码
 
 ## 其他资源
 
-* [Dataset(集成世界范围内的免费数据集和数据站点)](https://github.com/AITutorials/datasets)
+* [Datasets(集成世界范围内的免费数据集和数据站点)](https://github.com/AITutorials/datasets)
 
 * [Solutions(集成世界范围内重要AI技术解决方案)](https://github.com/AITutorials/solutions)
 
