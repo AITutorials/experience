@@ -40,7 +40,7 @@ seq2seq模型架构, 包括两部分分别是encoder(编码器)和decoder(解码
 
 ---
 
-### [查看更多>>>](http://ai.tisv.cn/3/#_1)
+### [查看更多教程示例>>>](http://ai.tisv.cn/3/#_1)
 
 ---
 
