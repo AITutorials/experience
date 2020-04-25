@@ -51,7 +51,7 @@
 
 * [Solutions(集成世界范围内重要AI技术解决方案)](https://github.com/AITutorials/solutions)
 
-* [Cooperation(寻求更多资源与合作伙伴)](https://github.com/AITutorials/cooperation)
+* [Papers(解析来自SOTA的高品质AI论文)](https://github.com/AITutorials/cooperation)
 
 ---
 
