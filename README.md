@@ -17,7 +17,7 @@
 
 这是出现在某聘公司笔试中的问题。可见该公司在某些业务中可能正在使用BERT模型，并希望通过该问题验证面试者对BERT模型的了解程度，以及是否能够清晰阐述该模型的训练过程。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/1.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/简述BERT模型的训练过程.md)**
 
 ---
 
@@ -26,7 +26,7 @@
 
 这是出现在某聘公司笔试中的问题。可见该公司正在计划实现或改进该项推荐业务，并希望通过该问题验证面试者对"猜你喜欢"类型推荐系统的了解程度，是否能够清晰阐述该系统的总体设计架构，以及用户请求过程中系统的运转方式。		
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/2.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/如何设计一个"猜你喜欢"的推荐系统.md)**
 
 
 ---
@@ -37,7 +37,7 @@
 
 增强性能几乎成为fasttext面试中的必考问题。		
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/3.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/fasttext模型在大量类别上能够快速训练的原因.md)**
 
 ---
 
@@ -46,7 +46,7 @@
 
 这是出现在某聘公司面试中的问题。可见该公司可能在某些业务中正在使用BERT模型，并希望通过该问题验证面试者对BERT模型的了解程度，以及是否能够清晰阐述该模型的训练过程。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/4.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说BERT模型在推断过程中做了哪些性能优化.md)**
 
 
 
@@ -56,7 +56,7 @@
 
 这是出现在某网公司面试中的问题。可见该公司可能在某些业务中正在使用BERT模型，并希望通过该问题验证面试者对BERT模型的了解程度，以及在业务中是否使用一些方法来提升BERT模型的训练效率。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/5.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说BERT模型在训练过程中做了哪些性能优化.md)**
 
 
 ---
@@ -66,7 +66,7 @@
 
 这是出现在某乎公司面试中的问题。fasttext模型因其简单的结构和在大规模文本处理上的高性能而闻名于世，当训练的fasttext模型在评估指标上到达瓶颈时该如何进行优化是非常重要的面试考点。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/6.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/为了提升fasttext模型的评估指标做了哪些优化.md)**
 
 
 ---
@@ -76,7 +76,7 @@
 这是出现在某聘公司面试中的问题。因为在实际工作中，大部分工程师都会遇到一些棘手的特殊问题，他们可能由已有数据，选择的模型，以及硬件资源等因素决定。这也是验证你是否有过实际操作的开放问题之一。
 
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/7.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说在某个模型训练过程中遇到的难题及其解决办法.md)**
 
 ---
 
@@ -85,7 +85,7 @@
 
 这是出现在某送公司面试中的问题。自动超参数调优一直以来都是模型训练过程中重要的一步，因此，考察对其的理解也是面试中经常出现的题目。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/8.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说对自动超参数调优方法的理解.md)**
 
 ---
 
@@ -93,7 +93,7 @@
 
 这是出现在某送公司面试中的问题。模型部署是模型使用的重要环节，其中热更新更是模型部署的硬性标准，因此，考察如何保证模型在部署时能够热更新非常重要。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/9https://github.com/AITutorials/manuals/blob/master/10.md.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/模型部署时如何实现热更新.md)**
 
 ---
 
@@ -102,7 +102,7 @@
 
 这是出现在某智慧公司面试中的问题。主动阅读/复现论文能够体现一名工程师对职业的喜爱以及优秀的学习能力。因此在面试中，面试官往往通过你最近所阅读一篇论文来考察。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/10.md)**
+**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说最近看过的一篇论文.md)**
 
 
 ---
