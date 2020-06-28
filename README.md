@@ -4,105 +4,412 @@
 
 ---
 
-## 手册说明
-
-我们将为您提供简明的AI面试手册，对AI工程师面试中出现的真实问题进行详细的剖析，给出最优雅的回答方式。这些内容适用于任何阶段准备面试的工程师们。
+### 概述
 
 
----
-
-## 精选面试问题
-
-#### 1. 简述BERT模型的训练过程
-
-这是出现在某聘公司笔试中的问题。可见该公司在某些业务中可能正在使用BERT模型，并希望通过该问题验证面试者对BERT模型的了解程度，以及是否能够清晰阐述该模型的训练过程。
-
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/简述BERT模型的训练过程.md)**
-
----
-
-
-#### 2. 如何设计一个"猜你喜欢"的推荐系统
-
-这是出现在某聘公司笔试中的问题。可见该公司正在计划实现或改进该项推荐业务，并希望通过该问题验证面试者对"猜你喜欢"类型推荐系统的了解程度，是否能够清晰阐述该系统的总体设计架构，以及用户请求过程中系统的运转方式。		
-
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/如何设计一个"猜你喜欢"的推荐系统.md)**
-
-
----
-
-#### 3. fasttext模型在大量类别上能够快速训练的原因
-
-这是出现在某头条公司面试中的问题。fasttext模型因其简单的结构和在大规模文本处理上的高性能而闻名于世，而考核该模型在哪些部分上的优化得以
-
-增强性能几乎成为fasttext面试中的必考问题。		
-
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/fasttext模型在大量类别上能够快速训练的原因.md)**
-
----
-
-
-#### 4. 说一说BERT模型在推断过程中做了哪些性能优化
-
-这是出现在某聘公司面试中的问题。可见该公司可能在某些业务中正在使用BERT模型，并希望通过该问题验证面试者对BERT模型的了解程度，以及是否能够清晰阐述该模型的训练过程。
-
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说BERT模型在推断过程中做了哪些性能优化.md)**
+对于程序员来讲，成为顶级开源项目的贡献者是一件有意义的事，当然，这也绝非易事。如果你正从事人工智能有关的工作，那么你一定了解诸如[Google Tensorflow](https://github.com/tensorflow)，[Facebook Pytorch](https://github.com/pytorch)这样的开源项目。下面我们就说一说如何成为这些顶级的开源项目的Contributor。
 
 
 
 ---
 
-#### 5. 说一说BERT模型在训练过程中做了哪些性能优化
 
-这是出现在某网公司面试中的问题。可见该公司可能在某些业务中正在使用BERT模型，并希望通过该问题验证面试者对BERT模型的了解程度，以及在业务中是否使用一些方法来提升BERT模型的训练效率。
+### 准备
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说BERT模型在训练过程中做了哪些性能优化.md)**
+
+1，首先你必须成为github的使用者，并已经熟悉了github上托管代码的基本逻辑。
+
+2，对于顶级的开源项目，一般需要你去签署一份Contributor License Agreement(简称CLA)，例如Tensorflow项目，个人签署[TF individual CLA](https://code.google.com/legal/individual-cla-v1.0.html)，公司签署[TF corporate CLA](https://code.google.com/legal/corporate-cla-v1.0.html)，Pytorch中的部分项目则需要签署[Facebook CLA](https://code.facebook.com/cla/)，这样你的代码才允许被接收。
+
+3，让你编写的代码风格更规范，一般的开源项目都要求为[Google Python Style](https://github.com/google/styleguide/blob/gh-pages/pyguide.md)，即使是Pytorch都是遵循该规范，更不要说Google自家的Tensorflow了。
+
+4，你贡献的代码往往由类或者函数构成（文档贡献除外），因此你需要单元测试程序，它和代码注释一样，是代码共享过程中必不可少的一部分。没有它，即使你的代码正确无误也不会被merge，最终还是会被要求提供单元测试脚本。
+
+
+5，很多开源项目要求你的每个py脚本都要以许可证书开头，比如Tensorflow，这是它的python许可证书示例: [Python license example](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/nn.py#L1)，当然，这很简单。
+
+```python
+# Copyright 2015 The TensorFlow Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# =============================================================================
+```
+
+
+### 工具
+
+接下来我们将介绍相关工具的使用，它能够有效的帮助我们来完成贡献前的准备工作，比如：代码规范和单元测试等。
+
+
+#### 代码规范工具
+
+
+* 为了满足代码满足Google Style的要求，我们首先需要一个代码规范检测工具，这里我们使用官方推荐的[pylint](https://pylint.org/)。
+
+> * 安装:
+
+```shell
+pip install pylint
+```
+
+---
+
+> * 使用:
+
+
+```shell
+# 使用pylint检测脚本代码，默认将按照PEP8标准
+# 这里我们需要指定配置文件，即按照Google Style标准
+# myfile.py代表你写好的python脚本文件
+pylint --rcfile=pylintrc myfile.py
+```
+
+---
+
+> * pylintrc内容请参照: [pylintrc](https://github.com/tensorflow/tensorflow/edit/master/tensorflow/tools/ci_build/pylintrc)
 
 
 ---
 
 
-#### 6. 为了提升fasttext模型的评估指标做了哪些优化
+* 又因为我们初始写的代码往往随意性过强，可能直接用pylint需要修改的地方太多，可能对你幼小的心灵造成重创，因此，这里也带来很多开源项目推荐的另外一款工具：[black](https://github.com/psf/black)，它能够直接帮你修改代码中出现的基本问题（仍然存在很多问题无法被判定，需要使用pylint检测）。
 
-这是出现在某乎公司面试中的问题。fasttext模型因其简单的结构和在大规模文本处理上的高性能而闻名于世，当训练的fasttext模型在评估指标上到达瓶颈时该如何进行优化是非常重要的面试考点。
+> * 安装:
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/为了提升fasttext模型的评估指标做了哪些优化.md)**
-
-
----
-
-#### 7. 说一说在某个模型训练过程中遇到的难题及其解决办法
-
-这是出现在某聘公司面试中的问题。因为在实际工作中，大部分工程师都会遇到一些棘手的特殊问题，他们可能由已有数据，选择的模型，以及硬件资源等因素决定。这也是验证你是否有过实际操作的开放问题之一。
-
-
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说在某个模型训练过程中遇到的难题及其解决办法.md)**
+```shell
+pip install black
+```
 
 ---
 
 
-#### 8. 说一说对自动超参数调优方法的理解
+> * 使用:
 
-这是出现在某送公司面试中的问题。自动超参数调优一直以来都是模型训练过程中重要的一步，因此，考察对其的理解也是面试中经常出现的题目。
+```shell
+# 这里的-l代表代码的每行最大长度
+# 默认是88，但是Google Style要求为80
+# 因此这里指定为80
+black myfile.py -l 80
+```
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说对自动超参数调优方法的理解.md)**
 
 ---
 
-#### 9. 模型部署时如何实现热更新
+> * 代码样式示例:
 
-这是出现在某送公司面试中的问题。模型部署是模型使用的重要环节，其中热更新更是模型部署的硬性标准，因此，考察如何保证模型在部署时能够热更新非常重要。
+```python
+def my_op(tensor_in, other_tensor_in, my_param, other_param=0.5,
+          output_collections=(), name=None):
+  """My operation that adds two tensors with given coefficients.
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/模型部署时如何实现热更新.md)**
+  Args:
+    tensor_in: `Tensor`, input tensor.
+    other_tensor_in: `Tensor`, same shape as `tensor_in`, other input tensor.
+    my_param: `float`, coefficient for `tensor_in`.
+    other_param: `float`, coefficient for `other_tensor_in`.
+    output_collections: `tuple` of `string`s, name of the collection to
+                        collect result of this op.
+    name: `string`, name of the operation.
+
+  Returns:
+    `Tensor` of same shape as `tensor_in`, sum of input values with coefficients.
+
+  Example:
+    >>> my_op([1., 2.], [3., 4.], my_param=0.5, other_param=0.6,
+              output_collections=['MY_OPS'], name='add_t1t2')
+    [2.3, 3.4]
+  """
+  with tf.name_scope(name or "my_op"):
+    tensor_in = tf.convert_to_tensor(tensor_in)
+    other_tensor_in = tf.convert_to_tensor(other_tensor_in)
+    result = my_param * tensor_in + other_param * other_tensor_in
+    tf.add_to_collection(output_collections, result)
+    return result
+```
+
+```python
+output = my_op(t1, t2, my_param=0.5, other_param=0.6,
+               output_collections=['MY_OPS'], name='add_t1t2')
+```
+
 
 ---
 
 
-#### 10. 说一说最近看过的一篇论文
+#### 单元测试工具
 
-这是出现在某智慧公司面试中的问题。主动阅读/复现论文能够体现一名工程师对职业的喜爱以及优秀的学习能力。因此在面试中，面试官往往通过你最近所阅读一篇论文来考察。
 
-**[点击查看](https://github.com/AITutorials/manuals/blob/master/说一说最近看过的一篇论文.md)**
+* 单元测试对于团队开发十分重要，是检验代码质量的重要依据，因此你的每一份完整的代码都要配备单元测试脚本。这里我们使用python主流的单元测试工具：[unittest](https://docs.python.org/3/library/unittest.html#module-unittest)。
+
+
+> * 安装:
+
+```shell
+pip install unittest
+```
+
+---
+
+
+> * 使用:
+	* 这里只去演示核心的使用方法，更具体的内容请参照[unittest文档](https://docs.python.org/3/library/unittest.html#module-unittest)
+
+
+```python
+# 导入unittest工具包
+import unittest
+
+# 我们首先要建立一个测试类，它将包含你所有需要进行测试的函数
+# 这个类不使用__init__(self)，但可以使用setUp(self)来定义公有部分
+# 它需要继承unittest.TestCase, 类名往往也建议以Test开头
+class TestStringMethods(unittest.TestCase):
+    # 类的里面依次是你需要进行测试的函数
+    # 这些函数建议以test_开头
+    # 这些函数一般情况不设置参数，而是直接在函数中具体化需要的参数
+    # 当然你也可以设置原始的参数，然后在外部具体化参数并调用该函数
+    # 在测试函数中必须存在assert...来断定测试结果
+    # 常用的assert...包括: assertEqual, assertTrue, assertFalse,
+    # assertRaises, assertIn, assertNotIn, assertIs, assertIsNot...
+    def test_upper(self,):
+        # 使用assertEqual判断两个字符串是否相等
+        self.assertEqual(
+            "foo".upper(), "FOO",
+        )
+
+    def test_isupper(self,):
+        # 使用assertTrue/False断定条件为真/假
+        self.assertTrue("FOO".isupper())
+        self.assertFalse("Foo".isupper())
+
+    def test_split(self,):
+        # 设定任意输入
+        s = "hello world"
+        # 使用assertIn断定列表包含关系
+        self.assertIn(
+            s.split(), [["hello", "world"]],
+        )
+        # 注意：这里with self.assertRaises来断定异常
+        with self.assertRaises(TypeError):
+            s.split("asd")
+
+
+# 这里是主函数，如果使用python运行该脚本测试，则必须存在
+# 如果使用pytest(后面会介绍)，则可以省略
+if __name__ == "__main__":
+    # 使用unittest.main运行所有继承unittest.TestCase的类
+    unittest.main()
+
+```
+
+---
+
+
+> * 装饰器的使用:
+	* unittest最常使用方法之一就是类/函数的装饰器。
+
+
+
+```python
+# 对于一些特殊需要强制跳过的测试的类/函数使用下方装饰器，但你必须说明原因
+# @unittest.skip("长得太帅，不需要测试，给我跳过！")
+
+# 如果条件为真，则该测试被强制跳过。比如：检测GPU是否可用
+# @unittest.skipIf(TEST_CUDA, "CUDA available")
+
+# 除非条件为真，否则该测试被强制跳过。比如: 检测某些依赖包是否安装
+# @unittest.skipUnless(has_unittest, "unittest dependencies are not installed")
+
+# 函数异常测试的表达方式，函数出现异常则测试通过，比之前说的内部异常粒度更大
+# @unittest.expectedFailure
+
+import torch
+try:
+    import unittest
+except ImportError:
+    has_unittest = False
+else:
+    has_unittest = True
+
+if torch.cuda.is_available():
+    TEST_CUDA = True
+else:
+    TEST_CUDA = False
+
+# 条件为真，不跳过
+@unittest.skipUnless(has_unittest, "unittest dependencies are not installed")
+# 条件为真，跳过；条件为假，不跳过
+@unittest.skipIf(TEST_CUDA, "CUDA available")
+class TestStringMethods(unittest.TestCase):
+    def test_upper(self,):
+        self.assertEqual(
+            "foo".upper(), "FOO",
+        )
+    @unittest.skip("长得太帅，不需要测试，给我跳过！")
+    def test_isupper(self,):
+        self.assertTrue("FOO".isupper())
+        self.assertFalse("Foo".isupper())
+
+    @unittest.expectedFailure
+    def test_split(self,):
+        s = "hello world"
+        self.assertIn(
+            s.split(), [["hello", "world"]],
+        )
+        # 这里预计抛出异常，但实际没有异常，本质上这也算一种异常
+        # 可以使用@unittest.expectedFailure
+        with self.assertRaises(TypeError):
+            s.split("ZMZ")
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+```
+
+---
+
+
+> * 运行你的测试脚本:
+
+```shell
+# 建议使用pytest执行测试脚本，你的python中往往自带这个工具包
+# 这时你不必写下主函数，并且他的输出形式更美观
+pytest test_myfile.py
+```
+
+---
+
+> * 输出效果:
+
+```text
+======================== test session starts =========================
+platform linux -- Python 3.7.3, pytest-5.0.1, py-1.8.0, pluggy-0.12.0
+rootdir: /root
+plugins: remotedata-0.3.1, celery-4.3.0, doctestplus-0.3.0, arraydiff-0.3, openfiles-0.3.2
+collected 3 items
+
+test_myfile.py sx.                                             [100%]
+
+=========== 1 passed, 1 skipped, 1 xfailed in 0.34 seconds ===========
+```
+
+---
+
+* 真实单元测试脚本请参考[Pytorch Tests](https://github.com/pytorch/pytorch/tree/master/test)和[Tensorflow Tests](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/util)。
+
+
+
+
+
+---
+
+
+### 过程
+
+在准备成为贡献者之前，要确保你已经能够熟练使用该项目。进而明确你要贡献源码的类型，是Fix Bug还是Implement New Feature（实现新特性）。当然，对一个新手贡献者来讲，Fix Bug是你的不二选择。除非你已经通过自己的实践，明确了要做贡献的具体内容，否则，建议你需要遵循以下步骤:
+
+* 第一步：
+
+> * 从开源项目的Github Issues中寻找open的问题，这里是[Tensorflow Issues](https://github.com/tensorflow/tensorflow/issues), [Pytorch Issues](https://github.com/pytorch/pytorch/issues)，仔细阅读大家提出的问题，这将帮你在寻找问题上节约大量时间，同时你可以在讨论区看到有关技术的讨论或已经提交的PR，进一步明确自己是否应该参与该问题的解决。（有很多开源项目的issue会带有"contributions welcome"的标签，可以优先看一看。）
+
+
+* 第二步：
+
+> * 当你明确了自己要解决的问题，在正式写代码之前，你需要fork这个开源项目到你自己的Github仓库，然后再将该仓库clone到自己指定的服务器上，这样最后你才可以提交PR。
+
+```shell
+# 例如:
+git clone https://github.com/AITutorials/tensorflow.git
+```
+
+
+> * 到这里你可以通过<code>git remote -v</code>发现我们只与自己远程仓库进行了连接(origin/master)。
+
+
+> * 此时我们还需要与开源项目的远程仓库建立连接(upstream/master)
+
+```shell
+# 以tensorflow为例建立连接
+git remote add upstream https://github.com/tensorflow/tensorflow.git
+
+# 查看到upstream
+git remote -v
+```
+
+---
+
+> * 然后你就需要建立一个自己的分支，当然，你可以先查看一下远程的分支情况
+
+```shell
+# 查看远程分支
+git branch -a
+
+# 创建自己的远程分支cnsync
+git checkout -b cnsync
+```
+
+---
+
+
+* 第三步：
+
+> * 通过第二步你已经拿到了项目的源码并创建了自己分支，这时就要开始你的表演，coding + review，你之前准备的[代码规范工具](http://52.83.69.131:8888/1/#_4)和[单元测试工具](http://52.83.69.131:8888/1/#_5)将派上用场。
+
+
+---
+
+* 第四步：
+
+> * 提交代码你的代码并在github中创建一个PR。
+
+```shell
+# 把内容添加到暂存区
+git add .
+
+# 提交更改的内容
+git commit -m "添加你的改变说明"
+
+# push到自己的远程仓库
+git push origin cnsync
+```
+
+> * 注意：这里虽然你只push到了自己的远程仓库，但其实你的远程仓库和源项目的仓库是连接的。也就是说，此时你可以通过操作自己的远程仓库决定将是否创建一个源项目的PR（这些过程可以在你刚刚fork的项目页面中实现，包括填写PR的title和comment，有时你也需要在title中添加一个标记，如[Draft]/[WIP]/[RFR]等等）。
+
+
+---
+
+
+* 第五步:
+
+> * 耐心的等待，如果你是PR是一个Ready For Review的状态，它将很快进入自动化测试的流程以及评委会的介入，不久后你将收到一些反馈，你的代码方案可能被采纳，可能需要更多的修改或测试。
+
+
+
+---
+
+
+### Pytorch-NLP贡献经历
+
+---
+
+### Tensorflow-Docs贡献经历
+
+---
+
+### 结语
+
+最终，经过不断地磨练，你将成为一名顶级开源项目的贡献者，只不过现在只有贡献排名前100的Contributor才可以获得列表的展示位，所以加油吧，少年！
+
 
 
 ---
