@@ -7,6 +7,9 @@
 
 1，[如何成为顶级开源项目的贡献者（源码篇）](https://github.com/AITutorials/experience/blob/master/如何成为顶级开源项目的贡献者（源码篇）.md)
 
+2，[如何成为顶级开源项目的贡献者（文档篇）](https://github.com/AITutorials/experience/blob/master/如何成为顶级开源项目的贡献者（文档篇）.md)
+
+
 ---
 
 ## 其他资源
