@@ -16,9 +16,6 @@
 
 * [Datasets(集成世界范围内的免费数据集和数据站点)](https://github.com/AITutorials/datasets)
 
-* [Solutions(集成世界范围内重要AI技术解决方案)](https://github.com/AITutorials/solutions)
-
-* [Papers(解析来自SOTA的高品质AI论文)](https://github.com/AITutorials/cooperation)
 
 ---
 
